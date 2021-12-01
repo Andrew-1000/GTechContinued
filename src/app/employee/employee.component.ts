@@ -105,8 +105,8 @@ export class EmployeeComponent implements OnInit {
   ];
   dataSource: MatTableDataSource<UserData>;
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | undefined;
+  @ViewChild(MatSort, { static: true }) sort: MatSort | undefined;
 
   constructor(public dialog: MatDialog) {
     // Create 100 users
@@ -130,7 +130,7 @@ export class EmployeeComponent implements OnInit {
     }
   }
 
-  openDialog(action, obj) {
+  openDialog(action: any, obj: { action: any; }) {
     obj.action = action;
     const dialogRef = this.dialog.open(EmployeeDialogComponent, {
       width: "500px",

@@ -23,8 +23,10 @@ const WORKORDER_DATA: Workorder[] = [
 
 
 export class WorkorderComponent implements OnInit {
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true })
+  paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: true })
+  sort!: MatSort;
 
   displayColumns: string[] = ["customerId", "workorderNumber", "dateCreated", "workOrderDate","employeeId", "signalTap",  "signalAd", "action"];
   dataSource = new MatTableDataSource(WORKORDER_DATA);
@@ -41,7 +43,7 @@ export class WorkorderComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog(action, obj) {
+  openDialog(action: any, obj: { action: any; }) {
     obj.action = action;
     const dialogRef = this.dialog.open(WorkorderDialogComponent, {
       width: "500px",
@@ -59,14 +61,14 @@ export class WorkorderComponent implements OnInit {
       }
     })
   }
-  addWorkOrder(workorder_obj){
+  addWorkOrder(_workorder_obj: any){
 
   }
 
-  updateWorkOrder(workorder_obj) {
+  updateWorkOrder(_workorder_obj: any) {
 
   }
-  deleteWorkOrder(workorder_obj){
+  deleteWorkOrder(_workorder_obj: any){
 
   }
 
