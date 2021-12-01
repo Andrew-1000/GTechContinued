@@ -1,0 +1,26 @@
+.full-width-table {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.data-table {
+  width: 100%;
+  margin: 20px auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 80%;
+}
+
+.button-end {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  bottom: 24px;
+
+}

@@ -1,0 +1,104 @@
+<app-home></app-home>
+
+<div class="content-wrapper">
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Stock</h1>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row justify-content-md-between">
+                <div class="col-sm-4">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Search Stock</mat-label>
+                    <input matInput (keyup)="applyFilteration($event)" placeholder="Example: eth" #input>
+                  </mat-form-field>
+
+                </div>
+                <div class="button-end">
+                  <button mat-raised-button (click)="openDialog('Add', {})" color="primary">
+                    <mat-icon>add</mat-icon> New Stock
+                  </button>
+                </div>
+
+              </div>
+
+              <div class="mat-elevation-z8">
+
+                <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+                  <!-- Position Column -->
+                  <!-- *ngFor="let warehouse for warehouse" -->
+                  <ng-container matColumnDef="position">
+                    <th mat-header-cell class="h6" *matHeaderCellDef mat-sort-header> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                  </ng-container>
+
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="warehouseName">
+                    <th mat-header-cell class="h6" *matHeaderCellDef mat-sort-header> Warehouse </th>
+                    <td mat-cell *matCellDef="let element"> {{element.warehouseName}} </td>
+                  </ng-container>
+
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="itemCode">
+                    <th mat-header-cell class="h6" *matHeaderCellDef mat-sort-header> Item Code </th>
+                    <td mat-cell *matCellDef="let element"> {{element.itemCode}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="quantity">
+                    <th mat-header-cell class="h6" *matHeaderCellDef mat-sort-header> Quantity </th>
+                    <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="warehouseId">
+                    <th mat-header-cell class="h6" *matHeaderCellDef mat-sort-header> Warehouse ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.warehouseId}} </td>
+                  </ng-container>
+
+
+                  <!-- Action Column -->
+                  <ng-container matColumnDef="action">
+                    <th mat-header-cell class="h6" *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element" class="action-link">
+                      <a (click)="openDialog('Update',element)"><button mat-icon-button>
+                          <mat-icon>edit</mat-icon>
+                        </button></a> |
+
+                      <a (click)="openDialog('Delete',element)"><button mat-icon-button>
+                          <mat-icon>delete</mat-icon>
+                        </button></a>
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+
+                  <!-- Row shown when there is no matching data. -->
+                  <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                  </tr>
+
+
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>

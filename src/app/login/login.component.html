@@ -1,0 +1,63 @@
+<mat-progress-bar mode="indeterminate" [value]="progress" *ngIf="isLoading"></mat-progress-bar>
+<div class="hold-transition login-page">
+  <div class="login-box container">
+    <div class="login-logo">
+      <p>G-Tech Sign In</p>
+    </div>
+    <div class="card">
+      <div class="card-body login-card-body">
+        <br>
+        <br>
+        <form name="form" [formGroup]="form" (ngSubmit)="form.valid && loginUser()">
+          <div class="form-group input-group">
+            <input type="emal" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{
+              'is-invalid':form.get('email').touched && form.get('email').invalid}" />
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+            </div>
+            <div *ngIf="form.get('email').touched && form.get('email').invalid" class="invalid-feedback">
+              <div *ngIf="form.get('email').errors.required">Email is required</div>
+              <div *ngIf="form.get('email').errors.pattern">Please provide a valid email address</div>
+
+            </div>
+          </div>
+
+          <div class="form-group input-group">
+            <!-- Change input type to be dynamic -->
+            <input [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" class="form-control"
+              formControlName="password" [ngClass]="{
+                'is-invalid':form.get('password').touched && form.get('password').invalid}" />
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fa" [ngClass]="{'fa-eye-slash': !fieldTextType,'fa-eye': fieldTextType}"
+                  (click)="toggleFieldTextType()"></i>
+              </span>
+            </div>
+            <div *ngIf="form.get('password').touched && form.get('password').invalid" class="invalid-feedback">
+              <div *ngIf="form.get('password').errors.required">Password is required</div>
+              <div *ngIf="form.get('password').errors.minlength">Password must be a atleast 6 characters</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" style="margin-right: 5px;" id="remember">
+                <label for="remember">
+                  <p> Keep me signed in</p>
+                </label>
+              </div>
+            </div>
+            <div class="col-4 form-group">
+              <input class="btn btn-primary btn-block" type="submit" [disabled]="!form.valid" value="Sign In">
+            </div>
+          </div>
+        </form>
+        <p class="col-12">
+          <a routerLink="/forgot-password">Forgot Password?</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>

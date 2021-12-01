@@ -1,0 +1,47 @@
+<!-- dialog-box.component.html -->
+
+<h3 mat-dialog-title><strong>{{action}}</strong> <strong> Employee</strong> </h3>
+<form [formGroup]="registrationForm">
+
+  <div mat-dialog-content >
+
+    <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'; else elseTemplate">
+      <mat-label>First Name</mat-label>
+      <input formControlName="firstName" placeholder=" First Name" matInput [(ngModel)]="employee_data.employeeFirstName">
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
+      <mat-label>Last Name</mat-label>
+      <input formControlName="lastName" placeholder=" Last Name" matInput [(ngModel)]="employee_data.employeeLastName">
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
+      <mat-label>Employee ID</mat-label>
+      <input formControlName="employeeId" placeholder="Employee ID" matInput [(ngModel)]="employee_data.enployeeId">
+      <mat-icon matSuffix>assignment_ind</mat-icon>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
+      <mat-label>Employee Email</mat-label>
+      <input formControlName="emailadd" placeholder=" Email Address" matInput [(ngModel)]="employee_data.employeeEmail">
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-error *ngIf="registrationForm.controls['emailadd'].errors?.required">This field is required</mat-error>
+      <mat-error *ngIf="registrationForm.controls['emailadd'].errors?.email">Please provide a valid email</mat-error>
+    </mat-form-field>
+
+
+    <ng-template #elseTemplate>
+      Sure to delete <b>{{employee_data.employeeFirstName}}?</b>
+    </ng-template>
+  </div>
+  <div mat-dialog-actions align="end" class="row">
+    <button mat-button class="btn btn-success " (click)="doAction()">{{action}}</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+  </div>
+
+</form>

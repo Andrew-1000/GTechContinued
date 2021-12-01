@@ -1,0 +1,31 @@
+<!-- dialog-box.component.html -->
+
+<h3 mat-dialog-title><strong>{{action}}</strong><strong> Warehouse</strong> </h3>
+<form [formGroup]="warehouseForm">
+  <div mat-dialog-content>
+
+    <mat-form-field appearance="outline" class="full-width" *ngIf="action != 'Delete'; else elseTemplate">
+      <mat-label>Warehouse Name</mat-label>
+      <input formControlName="warehouseName" matInput [(ngModel)]="local_data.name">
+      <mat-icon matSuffix>store</mat-icon>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width" *ngIf="action != 'Delete';">
+      <mat-label>Region</mat-label>
+      <input formControlName="region" matInput [(ngModel)]="local_data.region">
+      <mat-icon matSuffix>location_on</mat-icon>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <ng-template #elseTemplate>
+      Sure to delete <b>{{local_data.name}}?</b>
+    </ng-template>
+  </div>
+
+  <div mat-dialog-actions align="end" class="row">
+    <button mat-button class="btn btn-success" (click)="doAction()">{{action}}</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+  </div>
+
+</form>
