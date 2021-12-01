@@ -17,7 +17,7 @@ import { StockComponent } from './stock/stock.component';
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "/login",
+    redirectTo: "login",
     pathMatch: "full",
   },
   {
@@ -27,7 +27,7 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: DashboardComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: "forgot-password",

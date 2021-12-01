@@ -28,9 +28,9 @@ const REGION_DATA: Region[] = [
 })
 export class RegionComponent implements OnInit {
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
-  @ViewChild(MatTable, {static: true}) table: MatTable<any>;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | any;
+  @ViewChild(MatSort, { static: true }) sort: MatSort | any;
+  @ViewChild(MatTable, {static: true}) table: MatTable<any>  |any ;
 
   displayColumns: string[] = ["position", "regionName", "action"];
   dataSource = new MatTableDataSource(REGION_DATA);
@@ -50,8 +50,8 @@ export class RegionComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog(action, obj) {
-    obj.action = action;
+  openDialog(action: any, obj: { }) {
+    obj = action;
     const dialogRef = this.dialog.open(RegionDialogComponent, {
       width: "500px",
       data: obj
@@ -68,7 +68,7 @@ export class RegionComponent implements OnInit {
   });
 }
 
-addRowData(row_obj) {
+addRowData(_row_obj: any) {
   this.regionService.addRegion();
 
   // var d = new Date();
@@ -79,11 +79,11 @@ addRowData(row_obj) {
   // this.table.renderRows();
 }
 
-updateRowData(row_obj) {
+updateRowData(_row_obj: any) {
 
 }
 
-deleteRowData(row_obj) {
+deleteRowData(_row_obj: any) {
 
 }
 

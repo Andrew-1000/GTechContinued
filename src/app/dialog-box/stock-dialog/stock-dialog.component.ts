@@ -25,11 +25,11 @@ export class StockDialogComponent {
     this.stock_data = { ...data };
     this.action = this.stock_data.action;
   }
-  position: number
-  itemCode: string;
-  quantity: number;
-  warehouseId: number;
-  warehouseName: string;
+  position: number | undefined
+  itemCode: string | undefined;
+  quantity: number | undefined;
+  warehouseId: number | undefined;
+  warehouseName: string | undefined;
   stockForm: FormGroup = new FormGroup({
     warehouseName: new FormControl('', Validators.required),
     quantity: new FormControl('', Validators.required),

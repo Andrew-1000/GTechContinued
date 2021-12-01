@@ -1,81 +1,80 @@
 <app-home></app-home>
 <div class="hold-transition register-page">
-  <div class="register-box">
-    <div class="register-logo">
-      <h1 class="primary">User Registration</h1>
-    </div>
+    <div class="register-box">
+        <div class="register-logo">
+            <h1 class="primary">User Registration</h1>
+        </div>
 
 
-    <div class="card">
-      <div class="card-body register-card-body">
-        <p class="login-box-msg">Register a new account</p>
+        <div class="card">
+            <div class="card-body register-card-body">
+                <p class="login-box-msg">Register a new account</p>
 
-        <form [formGroup]="registrationForm" (ngSubmit)="registerEmployee()" >
+                <form [formGroup]="registrationForm" (ngSubmit)="registerEmployee()">
 
-          <div class="form-group input-group mb-3">
-            <input [class.is-invalid]="registrationForm.get('firstName').invalid &&
-                  registrationForm.get('firstName').touched" formControlName="firstName" type="text" class="form-control" placeholder="First name" >
-            <div class="input-group-append">
-              <span class="input-group-text">
+                    <div class="form-group input-group mb-3">
+                        <input [class.is-invalid]="registrationForm.get('firstName')?.invalid &&
+                  registrationForm.get('firstName')?.touched" formControlName="firstName" type="text" class="form-control" placeholder="First name">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
                 <i class="fas fa-user"></i>
               </span>
-            </div>
-            <div class="invalid-feedback">
-              <small [class.d-none]="registrationForm.get('firstName').valid ||
-              registrationForm.get('firstName').untouched" class="text-danger">First name is required</small>
-            </div>
-          </div>
+                        </div>
+                        <div class="invalid-feedback">
+                            <small [class.d-none]="registrationForm.get('firstName')?.valid ||
+              registrationForm.get('firstName')?.untouched" class="text-danger">First name is required</small>
+                        </div>
+                    </div>
 
-          <div class="form-group input-group mb-3">
-            <input [class.is-invalid]="registrationForm.get('lastName').invalid &&
-                  registrationForm.get('lastName').touched" formControlName="lastName" type="text" class="form-control" placeholder="Last name">
-            <div class="input-group-append">
-              <span class="input-group-text">
+                    <div class="form-group input-group mb-3">
+                        <input [class.is-invalid]="registrationForm.get('lastName')?.invalid &&
+                  registrationForm.get('lastName')?.touched" formControlName="lastName" type="text" class="form-control" placeholder="Last name">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
                 <i class="fas fa-user"></i>
               </span>
-            </div>
-            <div class="invalid-feedback">
-              <small [class.d-none]="registrationForm.get('lastName').valid ||
-              registrationForm.get('lastName').untouched" class="text-danger">Last name is required</small>
-            </div>
-          </div>
+                        </div>
+                        <div class="invalid-feedback">
+                            <small [class.d-none]="registrationForm.get('lastName')?.valid ||
+              registrationForm.get('lastName')?.untouched" class="text-danger">Last name is required</small>
+                        </div>
+                    </div>
 
-          <div class="input-group mb-3">
-            <input [class.is-invalid]="registrationForm.get('employeeId').invalid &&
-                  registrationForm.get('employeeId').touched" formControlName="employeeId" type="text" class="form-control" placeholder="Employee ID">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-id-card"></span>
-              </div>
-            </div>
-            <div class="invalid-feedback">
-              <small [class.d-none]="registrationForm.get('employeeId').valid ||
-              registrationForm.get('employeeId').untouched" class="text-danger">Employee Id is required</small>
-            </div>
-          </div>
+                    <div class="input-group mb-3">
+                        <input [class.is-invalid]="registrationForm.get('employeeId')?.invalid &&
+                  registrationForm.get('employeeId')?.touched" formControlName="employeeId" type="text" class="form-control" placeholder="Employee ID">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-id-card"></span>
+                            </div>
+                        </div>
+                        <div class="invalid-feedback">
+                            <small [class.d-none]="registrationForm.get('employeeId')?.valid ||
+              registrationForm.get('employeeId')?.untouched" class="text-danger">Employee Id is required</small>
+                        </div>
+                    </div>
 
-          <div class="input-group mb-3">
-            <input [class.is-invalid]="registrationForm.get('userEmail').invalid &&
-            registrationForm.get('userEmail').touched" formControlName="userEmail" type="email" class="form-control" placeholder="Email">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
-              </div>
-            </div>
-            <div class="invalid-feedback" *ngIf="(userEmail.invalid && userEmail.touched) || userEmail.dirty">
-              <small *ngIf="userEmail.errors?.required" class="text-danger">Email is required</small>
-              <small *ngIf="userEmail.errors?.pattern" class="text-danger">Please provide a valid email address</small>
-            </div>
-          </div>
+                    <div class="input-group mb-3">
+                        <input [class.is-invalid]="registrationForm.get('userEmail')?.invalid &&
+            registrationForm.get('userEmail')?.touched" formControlName="userEmail" type="email" class="form-control" placeholder="Email">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                        <div class="invalid-feedback" *ngIf="(userEmail?.invalid && userEmail?.touched) || userEmail?.dirty">
+                            <small *ngIf="userEmail?.errors?.required" class="text-danger">Email is required</small>
+                            <small *ngIf="userEmail?.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+                        </div>
+                    </div>
 
-          <div class="row justify-content-center">
-            <div class="col-5">
-              <button [disabled]='!registrationForm.valid' type="submit" class="btn btn-primary btn-block">Register</button>
+                    <div class="row justify-content-center">
+                        <div class="col-5">
+                            <button [disabled]='!registrationForm.valid' type="submit" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-          </div>
-        </form>
         </div>
     </div>
-  </div>
-  </div>
-
+</div>

@@ -43,8 +43,8 @@ export class WorkorderComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog(action: any, obj: { action: any; }) {
-    obj.action = action;
+  openDialog(action: any, obj: {}) {
+    obj = action;
     const dialogRef = this.dialog.open(WorkorderDialogComponent, {
       width: "500px",
       data: obj
@@ -61,14 +61,14 @@ export class WorkorderComponent implements OnInit {
       }
     })
   }
-  addWorkOrder(_workorder_obj: any){
+  addWorkOrder(_workorder_obj: undefined){
 
   }
 
-  updateWorkOrder(_workorder_obj: any) {
+  updateWorkOrder(_workorder_obj: undefined) {
 
   }
-  deleteWorkOrder(_workorder_obj: any){
+  deleteWorkOrder(_workorder_obj: undefined){
 
   }
 

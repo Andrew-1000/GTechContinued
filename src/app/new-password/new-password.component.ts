@@ -41,9 +41,9 @@ export class NewPasswordComponent implements OnInit {
     this._router.navigate(['/dashboard'])
   }
 
-  fieldTextType: boolean;
+  fieldTextType: boolean | any;
 
-  confirmFieldTextType: boolean;
+  confirmFieldTextType: boolean | any;
 
   toggleFieldTextType() {
     this.fieldTextType = !this.fieldTextType;

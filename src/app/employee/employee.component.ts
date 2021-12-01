@@ -22,6 +22,7 @@ const COLORS: string[] = [
   "Lenny",
   "red",
   "orange",
+  "Alchusia",
   "yellow",
   "olive",
   "green",
@@ -33,13 +34,12 @@ const COLORS: string[] = [
   "blue",
   "navy",
   "black",
-  "gray",
+  "gray"
 ];
 const NAMES: string[] = [
   "Maia",
   "Asher",
   "Olivia",
-  "Atticus",
   "Amelia",
   "Jack",
   "Charlotte",
@@ -105,8 +105,8 @@ export class EmployeeComponent implements OnInit {
   ];
   dataSource: MatTableDataSource<UserData>;
 
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | undefined;
-  @ViewChild(MatSort, { static: true }) sort: MatSort | undefined;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | any;
+  @ViewChild(MatSort, { static: true }) sort: MatSort | any;
 
   constructor(public dialog: MatDialog) {
     // Create 100 users
@@ -130,8 +130,8 @@ export class EmployeeComponent implements OnInit {
     }
   }
 
-  openDialog(action: any, obj: { action: any; }) {
-    obj.action = action;
+  openDialog(action: any, obj: {}) {
+    obj = action;
     const dialogRef = this.dialog.open(EmployeeDialogComponent, {
       width: "500px",
       data: obj,

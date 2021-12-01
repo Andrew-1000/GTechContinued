@@ -25,7 +25,6 @@ import { AuthService } from './services/authentication-service/auth.service';
 import { AuthGuard } from './services/authentication-service/auth.guard';
 import { MaterialModule } from './material/material.module';
 import { EmployeeService } from './services/employee-service/employee.service';
-import { Token } from '@angular/compiler/src/ml_parser/lexer';
 import { TokenInterceptorService } from './services/authentication-service/token-interceptor.service';
 import { EmployeeDialogComponent } from './dialog-box/employee-dialog/employee-dialog.component';
 import { WorkorderComponent } from './workorder/workorder.component';

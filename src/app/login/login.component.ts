@@ -15,7 +15,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 export class LoginComponent implements OnInit {
 
   hide = true;
-  fieldTextType: boolean;
+  fieldTextType: boolean | undefined;
   isLoading = false;
   progress = 48
 

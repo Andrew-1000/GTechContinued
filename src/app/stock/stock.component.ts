@@ -28,8 +28,8 @@ const STOCK_DATA: Stock[] = [
 
 export class StockComponent implements OnInit {
 
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator | any;
+  @ViewChild(MatSort, { static: true}) sort: MatSort | any;
 
   displayColumns: string[] = ["position", "warehouseName", "itemCode", "quantity", "warehouseId", "action"];
   dataSource = new MatTableDataSource(STOCK_DATA);
@@ -48,8 +48,8 @@ export class StockComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog(action, obj) {
-    obj.action = action;
+  openDialog(action: any, obj: {}) {
+    obj = action;
     const dialogRef = this.dialog.open(StockDialogComponent,{
       width: "500px",
       data: obj
@@ -66,15 +66,15 @@ export class StockComponent implements OnInit {
     });
 
   }
-  addStock(stock_obj){
+  addStock(_stock_obj: any){
 
   }
 
-  updateStock(stock_obj){
+  updateStock(_stock_obj: any){
 
   }
 
-  deleteStock(stock_obj) {
+  deleteStock(_stock_obj: any) {
 
   }
 

@@ -26,8 +26,8 @@ const WAREHOUSE_DATA: Warehouse[] = [
   styleUrls: ["./warehouse.component.css"],
 })
 export class WarehouseComponent implements OnInit {
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | any;
+  @ViewChild(MatSort, { static: true }) sort: MatSort | any;
   //Chemistry Metals with Filtering
   displayColumns: string[] = ["position", "name", "region", "action"];
   dataSource = new MatTableDataSource(WAREHOUSE_DATA);
@@ -53,8 +53,8 @@ export class WarehouseComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-    openDialog(action, obj) {
-      obj.action = action;
+    openDialog(action: any, obj: { }) {
+      obj = action;
       const dialogRef = this.dialog.open(DialogBoxComponent, {
         width: "500px",
         data: obj
@@ -71,7 +71,7 @@ export class WarehouseComponent implements OnInit {
     });
   }
 
-  addRowData(row_obj) {
+  addRowData(row_obj: undefined) {
     // var date = new Date();
     // this.dataSource.push({
     //   name:row_obj.name,
@@ -80,11 +80,11 @@ export class WarehouseComponent implements OnInit {
     // this.table.renderRows()
   }
 
-  updateRowData(row_obj) {
+  updateRowData(row_obj: undefined) {
 
   }
 
-  deleteRowData(row_obj) {
+  deleteRowData(row_obj: undefined) {
 
   }
 }
