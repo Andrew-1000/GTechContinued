@@ -3,10 +3,8 @@
 
 /* You can add global styles to this file, and also import other style files */
 
-
-/* @import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
-@import "../node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css"; */
-
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+@import "../node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css";
 html,
 body {
     height: 100%;
