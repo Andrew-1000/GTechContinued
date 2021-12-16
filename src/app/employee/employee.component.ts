@@ -19,7 +19,7 @@ export interface UserData {
 
 /** Constants used to fill up our data base. */
 const COLORS: string[] = [
-  "Lenny",
+  "Blue",
   "red",
   "orange",
   "Alchusia",

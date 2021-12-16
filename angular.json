@@ -10,7 +10,7 @@
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:application": {
-                    "strict": true
+                    "style": "scss"
                 }
             },
             "root": "",
@@ -30,9 +30,8 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.css",
+                            "src/styles.scss"
 
-                            "node_modules/@coreui/icons/css/coreui-icons.css"
 
                         ],
                         "scripts": []
@@ -97,7 +96,7 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.css"
+                            "src/styles.scss"
                         ],
                         "scripts": []
                     }

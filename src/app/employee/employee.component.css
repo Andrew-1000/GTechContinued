@@ -1,16 +1,15 @@
 table {
-  width: 100%;
+    width: 100%;
 }
 
 .mat-form-field {
-  font-size: 14px;
-  width: 100%;
+    font-size: 14px;
+    width: 100%;
 }
 
 .button-end {
-  position: absolute;
-  top: 24px;
-  right: 20px;
-  bottom: 24px;
-
+    position: absolute;
+    top: 24px;
+    right: 20px;
+    bottom: 24px;
 }
