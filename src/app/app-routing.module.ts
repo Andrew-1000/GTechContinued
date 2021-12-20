@@ -44,32 +44,32 @@ const routes: Routes = [
   {
     path: "registration",
     component: RegistrationComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: "employee",
     component: EmployeeComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: "warehouse",
     component: WarehouseComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: "workorder",
     component: WorkorderComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: "region",
     component: RegionComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: "stock",
     component: StockComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   }
 ];
 @NgModule({

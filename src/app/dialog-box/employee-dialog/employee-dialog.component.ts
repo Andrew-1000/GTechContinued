@@ -31,8 +31,8 @@ export class EmployeeDialogComponent {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     employeeId: new FormControl('', Validators.required),
-    emailadd: new FormControl('', [Validators.required, Validators.email]
-  )
+    password: new FormControl('', Validators.required),
+    emailadd: new FormControl('', [Validators.required, Validators.email])
   });
 
   showToastr() {

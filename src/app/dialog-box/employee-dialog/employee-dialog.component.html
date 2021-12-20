@@ -34,13 +34,20 @@
             <mat-error *ngIf="registrationForm.controls['emailadd']?.errors?.email">Please provide a valid email</mat-error>
         </mat-form-field>
 
+        <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
+            <mat-label>Employee Password</mat-label>
+            <input formControlName="password" type="password" placeholder=" Password" matInput [(ngModel)]="employee_data.employeePassword">
+            <mat-icon matSuffix>key</mat-icon>
+            <mat-error *ngIf="registrationForm.controls['password']?.errors?.required">This field is required</mat-error>
+            <mat-error *ngIf="registrationForm.controls['password']?.errors?.email">Please provide a password</mat-error>
+        </mat-form-field>
 
         <ng-template #elseTemplate>
             Sure to delete <b>{{employee_data.employeeFirstName}}?</b>
         </ng-template>
     </div>
     <div mat-dialog-actions align="end" class="row">
-        <button mat-button class="btn btn-success " (click)="doAction()">{{action}}</button>
+        <button mat-button class="btn btn-success " (click)="doAction()">Add</button>
         <button mat-button mat-dialog-close>Cancel</button>
     </div>
 
