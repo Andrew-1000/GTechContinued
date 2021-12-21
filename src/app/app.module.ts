@@ -36,6 +36,9 @@ import { RegionDialogComponent } from './dialog-box/region-dialog/region-dialog.
 import { StockComponent } from './stock/stock.component';
 import { StockDialogComponent } from './dialog-box/stock-dialog/stock-dialog.component';
 
+import { list } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
