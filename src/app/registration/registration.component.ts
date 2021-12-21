@@ -16,12 +16,12 @@ export class RegistrationComponent implements OnInit {
     return this.registrationForm.get('userEmail');
   }
 
-  constructor(private formBuilder: FormBuilder, private _authService: AuthService, private _notificationService:NotificationService,private _router: Router) { }
+  constructor(private formBuilder: FormBuilder, public _authService: AuthService, private _notificationService:NotificationService,private _router: Router) { }
 
   registrationForm = this.formBuilder.group({
-    firstName: ['',Validators.required],
-    lastName: ['',Validators.required],
-    employeeId: ['',Validators.required],
+    // firstName: ['',Validators.required],
+    // lastName: ['',Validators.required],
+    // employeeId: ['',Validators.required],
     userEmail: ['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]]
 });
 
@@ -30,7 +30,7 @@ export class RegistrationComponent implements OnInit {
 
   registerEmployee(){
     console.log(this.registrationForm.value)
-    this._authService.registerUser(this.registrationForm.value)
+    this._authService.Signup(this.registrationForm.value)
       .subscribe(
         res => {
           console.log('success')

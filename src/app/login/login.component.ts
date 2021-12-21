@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   progress = 48
 
   constructor(
-    private _authService: AuthService,
+    public _authService: AuthService,
     private _router: Router,
     private toastr: ToastrService
     ) {}
