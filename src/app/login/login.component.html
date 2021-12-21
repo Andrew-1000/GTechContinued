@@ -10,7 +10,7 @@
                 <br>
                 <form name="form" [formGroup]="form" (ngSubmit)="form.valid && loginUser()">
                     <div class="form-group input-group">
-                        <input type="emal" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{
+                        <input type="email" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{
               'is-invalid':form.get('email')?.touched && form.get('email')?.invalid}" />
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fa fa-envelope"></i></span>
@@ -53,8 +53,11 @@
                     </div>
                 </form>
                 <p class="col-12">
-                    <a routerLink="/forgot-password">Forgot Password?</a>
+                    <a routerLink="/forgot-password" align="start">Forgot Password?    </a> |
+                    <a routerLink="/registration" align="end">    Dont have an account?</a>
+
                 </p>
+
 
             </div>
         </div>
