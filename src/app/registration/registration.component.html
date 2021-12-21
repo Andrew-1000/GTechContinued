@@ -7,51 +7,14 @@
 
         <div class="card">
             <div class="card-body register-card-body">
-                <p class="login-box-msg">Register a new account</p>
+                <p class="login-box-msg">Register account with email and password</p>
 
                 <form [formGroup]="registrationForm" (ngSubmit)="registerEmployee()">
 
-                    <div class="form-group input-group mb-3">
-                        <input [class.is-invalid]="registrationForm.get('firstName')?.invalid &&
-                  registrationForm.get('firstName')?.touched" formControlName="firstName" type="text" class="form-control" placeholder="First name">
-                        <div class="input-group-append">
-                            <span class="input-group-text">
-                <i class="fas fa-user"></i>
-              </span>
-                        </div>
-                        <div class="invalid-feedback">
-                            <small [class.d-none]="registrationForm.get('firstName')?.valid ||
-              registrationForm.get('firstName')?.untouched" class="text-danger">First name is required</small>
-                        </div>
-                    </div>
 
-                    <div class="form-group input-group mb-3">
-                        <input [class.is-invalid]="registrationForm.get('lastName')?.invalid &&
-                  registrationForm.get('lastName')?.touched" formControlName="lastName" type="text" class="form-control" placeholder="Last name">
-                        <div class="input-group-append">
-                            <span class="input-group-text">
-                <i class="fas fa-user"></i>
-              </span>
-                        </div>
-                        <div class="invalid-feedback">
-                            <small [class.d-none]="registrationForm.get('lastName')?.valid ||
-              registrationForm.get('lastName')?.untouched" class="text-danger">Last name is required</small>
-                        </div>
-                    </div>
 
-                    <div class="input-group mb-3">
-                        <input [class.is-invalid]="registrationForm.get('employeeId')?.invalid &&
-                  registrationForm.get('employeeId')?.touched" formControlName="employeeId" type="text" class="form-control" placeholder="Employee ID">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-id-card"></span>
-                            </div>
-                        </div>
-                        <div class="invalid-feedback">
-                            <small [class.d-none]="registrationForm.get('employeeId')?.valid ||
-              registrationForm.get('employeeId')?.untouched" class="text-danger">Employee Id is required</small>
-                        </div>
-                    </div>
+
+
 
                     <div class="input-group mb-3">
                         <input [class.is-invalid]="registrationForm.get('userEmail')?.invalid &&
@@ -69,7 +32,7 @@
 
                     <div class="form-group input-group mb-3">
                         <input [class.is-invalid]="registrationForm.get('password')?.invalid &&
-                  registrationForm.get('password')?.touched" formControlName="password" type="password" class="form-control" placeholder="Password">
+                  registrationForm.get('password')?.touched" formControlName="password" #password type="password" class="form-control" placeholder="Password">
                         <div class="input-group-append">
                             <span class="input-group-text">
                 <i class="fas fa-key"></i>
@@ -83,7 +46,7 @@
 
                     <div class="row justify-content-center">
                         <div class="col-5">
-                            <button [disabled]='!registrationForm.valid' type="submit" class="btn btn-primary btn-block">Register</button>
+                            <button [disabled]='!registrationForm.valid' type="submit" (click)="_authService.Signup(userEmail?.value, password.value)" class="btn btn-primary btn-block">Register</button>
                         </div>
                     </div>
                 </form>
