@@ -38,7 +38,9 @@ import { StockDialogComponent } from './dialog-box/stock-dialog/stock-dialog.com
 
 import { list } from '@angular/fire/database';
 import { environment } from '../environments/environment';
-
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 
 @NgModule({
   declarations: [
@@ -77,8 +79,10 @@ import { environment } from '../environments/environment';
       progressBar: false,
       progressAnimation: "increasing",
       preventDuplicates: true
-    })
-
+    }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   entryComponents: [
     DialogBoxComponent, EmployeeDialogComponent, WorkorderDialogComponent
