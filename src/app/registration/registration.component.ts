@@ -30,7 +30,7 @@ export class RegistrationComponent implements OnInit {
 
   registerEmployee(){
     console.log(this.registrationForm.value)
-    this._authService.Signup(this.registrationForm.value)
+    this._authService.registerUser(this.registrationForm.value)
       .subscribe(
         res => {
           console.log('success')
