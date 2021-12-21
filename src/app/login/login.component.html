@@ -10,7 +10,7 @@
                 <br>
                 <form name="form" [formGroup]="form" (ngSubmit)="form.valid && loginUser()">
                     <div class="form-group input-group">
-                        <input type="email" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{
+                        <input type="email" class="form-control" placeholder="Email" formControlName="email" #email [ngClass]="{
               'is-invalid':form.get('email')?.touched && form.get('email')?.invalid}" />
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fa fa-envelope"></i></span>
@@ -24,7 +24,7 @@
 
                     <div class="form-group input-group">
                         <!-- Change input type to be dynamic -->
-                        <input [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" class="form-control" formControlName="password" [ngClass]="{
+                        <input [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" class="form-control" formControlName="password" #password [ngClass]="{
                 'is-invalid':form.get('password')?.touched && form.get('password')?.invalid}" />
                         <div class="input-group-append">
                             <span class="input-group-text">
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="col-4 form-group">
-                            <input class="btn btn-primary btn-block" type="submit" [disabled]="!form.valid" value="Sign In">
+                            <input class="btn btn-primary btn-block" type="submit" [disabled]="!form.valid" value="Sign In" (click)="_authService.SignIn(email.value, password.value)">
                         </div>
                     </div>
                 </form>
