@@ -16,6 +16,10 @@ export class RegistrationComponent implements OnInit {
     return this.registrationForm.get('userEmail');
   }
 
+  get password() {
+    return this.registrationForm.get('password');
+  }
+
   constructor(private formBuilder: FormBuilder, public _authService: AuthService, private _notificationService:NotificationService,private _router: Router) { }
 
   registrationForm = this.formBuilder.group({
