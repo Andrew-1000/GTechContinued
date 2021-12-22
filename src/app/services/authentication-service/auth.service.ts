@@ -8,6 +8,7 @@ import { Employee } from 'src/app/model/employee';
 import * as firebase from 'firebase/app';
 import 'firebase/auth'
 import 'firebase/firestore'
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,18 @@ import 'firebase/firestore'
 export class AuthService {
   userData: any;
   
-  
+  hide = true;
+  fieldTextType: boolean | undefined;
+  isLoading = false;
+  progress =60
+
   constructor(
     private httpClient: HttpClient,
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     public router: Router,
     public ngZone: NgZone,
+    public toastr: ToastrService
     
     ) { 
       this.afAuth.authState.subscribe(employee => {
@@ -38,18 +44,23 @@ export class AuthService {
 
     //Signing in With Username and Password - Firebase
     async SignIn(email: any, password : any) {
+      this.loading()
       try {
         const result = await this.afAuth.signInWithEmailAndPassword(email, password);
         this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
+          this.showToastr()
         });
         this.SetUserData(result);
       } catch (error) {
+        this.showError()
         window.alert(error);
+        
       }
   }
 
   async Signup(email: any, password: any) {
+    this.loading()
     try {
       const result = await this.afAuth.createUserWithEmailAndPassword(email, password);
       // this.SendVerificationMail();
@@ -57,6 +68,23 @@ export class AuthService {
     } catch (error) {
       window.alert(error);
     }
+  }
+
+
+  loading() {
+    this.isLoading = true;
+    //Faking an api call
+    setTimeout(()=>{
+      this.isLoading = false;
+    }, 3000)
+  }
+
+
+  showToastr() {
+    this.toastr.success('Logged in successfully', 'Success');
+  }
+  showError() {
+    this.toastr.error('Please check your credentials and try again', 'Oops!')
   }
   // async SendVerificationMail() {
   //   this.afAuth.auth.sendEmailVerification();
@@ -100,16 +128,14 @@ get isLoggedIn(): boolean {
 //Setting up data when signing in specicifically with username and password, sign up with user and password and sign in with social auth provider in firestore database using 
 // AngularFirestore + AngularFireStoreDocuemtn service
   SetUserData(employee: any) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`employee/${employee.employeeId}`);
+    // const userRef: AngularFirestoreDocument<any> = this.afs.doc(`employee/${employee.employeeId}`);
     const userData: Employee = {
       employeeId: employee.employeeId,
       employeeEmail: employee.employeeEmail,
       employeeName: employee.employeeName,
       emailVerified: employee.emailVerified
     }
-    return userRef.set(userData, {
-      merge: true
-    })
+    return userData;
   }
 
   //Sign Out
