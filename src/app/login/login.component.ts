@@ -42,24 +42,24 @@ export class LoginComponent implements OnInit {
 
 
 
-  loginUser() {
+  // loginUser() {
 
-    this.loading()
-    console.log(this.form.value)
-    this._authService.loginUser(this.form.value)
-    .subscribe(
-      res => {
-        console.log('success')
-        localStorage.setItem('token',res.access)
-        this._router.navigate(['/dashboard'])
-        this.showToastr()
-      },
-      err =>{
-        console.log('error')
-        return this.showError()
-      }
-    )
-  }
+  //   this.loading()
+  //   console.log(this.form.value)
+  //   this._authService.loginUser(this.form.value)
+  //   .subscribe(
+  //     res => {
+  //       console.log('success')
+  //       localStorage.setItem('token',res.access)
+  //       this._router.navigate(['/dashboard'])
+  //       this.showToastr()
+  //     },
+  //     err =>{
+  //       console.log('error')
+  //       return this.showError()
+  //     }
+  //   )
+  // }
 
   loading() {
     this.isLoading = true;
@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
   }
 
   showError() {
-    this.toastr.error('Please check your credentials and try again', 'Oops!')
+    this.toastr.error('Please check your credentials and try again')
   }
 
   toggleFieldTextType() {
