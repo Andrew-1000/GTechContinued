@@ -8,7 +8,7 @@
             <div class="card-body login-card-body">
                 <br>
                 <br>
-                <form name="form" [formGroup]="form" (ngSubmit)="form.valid && loginUser()">
+                <form name="form" [formGroup]="form" (ngSubmit)="form.valid ">
                     <div class="form-group input-group">
                         <input type="email" class="form-control" placeholder="Email" formControlName="email" #email [ngClass]="{
               'is-invalid':form.get('email')?.touched && form.get('email')?.invalid}" />
