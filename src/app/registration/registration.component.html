@@ -9,13 +9,7 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Register account with email and password</p>
 
-                <form [formGroup]="registrationForm" (ngSubmit)="registerEmployee()">
-
-
-
-
-
-
+                <form [formGroup]="registrationForm">
                     <div class="input-group mb-3">
                         <input [class.is-invalid]="registrationForm.get('userEmail')?.invalid &&
             registrationForm.get('userEmail')?.touched" formControlName="userEmail" type="email" class="form-control" placeholder="Email">
