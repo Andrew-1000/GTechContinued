@@ -9,6 +9,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth'
 import 'firebase/firestore'
 import { ToastrService } from 'ngx-toastr';
+import { NotificationService } from '../notification-service/notification.service';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,8 @@ export class AuthService {
     public afAuth: AngularFireAuth,
     public router: Router,
     public ngZone: NgZone,
-    public toastr: ToastrService
+    public toastr: ToastrService,
+    public _notificationService: NotificationService
     
     ) { 
       this.afAuth.authState.subscribe(employee => {
@@ -59,14 +61,18 @@ export class AuthService {
       }
   }
 
-  async Signup(email: any, password: any) {
-    this.loading()
+  async Signup(userEmail: any, password: any) {
+    
     try {
-      const result = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      this.loading()
+      const result = await this.afAuth.createUserWithEmailAndPassword(userEmail, password);
       // this.SendVerificationMail();
       this.SetUserData(result);
+      return this._notificationService.showToastr('New employee registered successfully, Success')
+      
     } catch (error) {
       window.alert(error);
+      return this._notificationService.showError('Oops an error occured')
     }
   }
 
