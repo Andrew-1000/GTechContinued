@@ -12,21 +12,21 @@
                 <form [formGroup]="registrationForm">
                     <div class="input-group mb-3">
                         <input [class.is-invalid]="registrationForm.get('userEmail')?.invalid &&
-            registrationForm.get('userEmail')?.touched" formControlName="userEmail" type="email" class="form-control" placeholder="Email">
+            registrationForm.get('userEmail')?.touched" formControlName="userEmail" type="email" class="form-control" placeholder="Email" #userEmail required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
-                        <div class="invalid-feedback" *ngIf="(userEmail?.invalid && userEmail?.touched) || userEmail?.dirty">
+                        <!-- <div class="invalid-feedback" *ngIf="(userEmail?.invalid && userEmail?.touched) || userEmail?.dirty">
                             <small *ngIf="userEmail?.errors?.required" class="text-danger">Email is required</small>
                             <small *ngIf="userEmail?.errors?.pattern" class="text-danger">Please provide a valid email address</small>
-                        </div>
+                        </div> -->
                     </div>
 
-                    <div class="form-group input-group mb-3">
+                    <div class=" input-group mb-3">
                         <input [class.is-invalid]="registrationForm.get('password')?.invalid &&
-                  registrationForm.get('password')?.touched" formControlName="password" type="password" class="form-control" placeholder="Password">
+                  registrationForm.get('password')?.touched" formControlName="password" type="password" class="form-control" placeholder="Password" #password required>
                         <div class="input-group-append">
                             <span class="input-group-text">
                 <i class="fas fa-key"></i>

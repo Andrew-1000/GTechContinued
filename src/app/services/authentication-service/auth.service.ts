@@ -68,6 +68,7 @@ export class AuthService {
       const result = await this.afAuth.createUserWithEmailAndPassword(userEmail, password);
       // this.SendVerificationMail();
       this.SetUserData(result);
+      this.router.navigate(['dashboard']);
       return this._notificationService.showToastr('New employee registered successfully, Success')
       
     } catch (error) {
