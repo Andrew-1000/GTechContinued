@@ -14,7 +14,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 })
 export class LoginComponent implements OnInit {
 
-  hide = true;
+  hide = false;
   fieldTextType: boolean | undefined;
   isLoading = false;
   progress = 48
@@ -66,10 +66,11 @@ export class LoginComponent implements OnInit {
     //Faking an api call
     setTimeout(()=>{
       this.isLoading = false;
-    }, 3000)
+    }, 300)
   }
 
   showToastr() {
+    this.loading()
     this.toastr.success('Logged in successfully', 'Success');
   }
 

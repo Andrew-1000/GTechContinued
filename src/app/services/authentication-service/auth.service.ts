@@ -20,7 +20,7 @@ export class AuthService {
   hide = true;
   fieldTextType: boolean | undefined;
   isLoading = false;
-  progress =60
+  progress =48
 
   constructor(
     private httpClient: HttpClient,
@@ -46,8 +46,9 @@ export class AuthService {
 
     //Signing in With Username and Password - Firebase
     async SignIn(email: any, password : any) {
-      this.loading()
+      
       try {
+        this.loading();
         const result = await this.afAuth.signInWithEmailAndPassword(email, password);
         this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
@@ -83,7 +84,7 @@ export class AuthService {
     //Faking an api call
     setTimeout(()=>{
       this.isLoading = false;
-    }, 3000)
+    }, 300)
   }
 
 
