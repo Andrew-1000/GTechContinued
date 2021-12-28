@@ -8,9 +8,11 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "heroku-postbuild": "ng build --prod"
     },
     "engines": {
+        "node": "14.18.2",
         "npm": "8.3.0"
     },
 
