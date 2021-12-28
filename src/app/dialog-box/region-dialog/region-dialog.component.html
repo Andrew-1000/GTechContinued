@@ -1,18 +1,18 @@
 <!-- dialog-box.component.html -->
 
-<h3 mat-dialog-title><strong>{{action}} Region</strong>  </h3>
+<h3 mat-dialog-title><strong>{{action}} Region</strong> </h3>
 
-<div mat-dialog-content >
-  <mat-form-field appearance="outline" class="full-width" *ngIf="action != 'Delete'; else elseTemplate">
-    <mat-label>Region Name</mat-label>
-    <input placeholder="Name:" matInput [(ngModel)]="region_data.regionName">
+<div mat-dialog-content>
+    <mat-form-field appearance="outline" class="full-width" *ngIf="action != 'Delete'; else elseTemplate">
+        <mat-label>Region Name</mat-label>
+        <input placeholder="Name:" matInput [(ngModel)]="region_data.regionName">
 
-  </mat-form-field>
-  <ng-template #elseTemplate>
-    Sure to delete <b>{{region_data.regionName}}?</b>
-  </ng-template>
+    </mat-form-field>
+    <ng-template #elseTemplate>
+        Sure to delete <b>{{region_data.regionName}}?</b>
+    </ng-template>
 </div>
 <div mat-dialog-actions align="end" class="row">
-  <button mat-button class="btn btn-success" (click)="doAction()">{{action}}</button>
-  <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button class="btn btn-success" (click)="doAction()">Create</button>
+    <button mat-button mat-dialog-close>Cancel</button>
 </div>
