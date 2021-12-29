@@ -57,7 +57,8 @@
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "^13.0.3",
-
+        "@angular/cli": "~13.0.3",
+        "@angular/compiler-cli": "~13.0.2",
         "@angular/language-service": "~10.0.2",
         "@types/datatables.net": "^1.10.19",
         "@types/firebase": "^3.2.1",
