@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EmployeeService {
 
-  private _employeeListUrl = "https://gtechwms.herokuapp.com/accounts?limit=25&offset=0";
+  private _employeeListUrl = "#";
+  // private _employeeListUrl = "https://gtechwms.herokuapp.com/?limit=25&offset=0";
 
   constructor(private _http:HttpClient) { }
 

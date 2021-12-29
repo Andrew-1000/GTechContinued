@@ -8,7 +8,9 @@ import { Workorder } from '../../model/workorder';
 })
 export class WorkorderService {
 
-  private _workorderUrl = "https://gtechwms.herokuapp.com/teams?limit=25&offset=0"
+  private _workorderUrl = "#"
+  // private _workorderUrl = "https://gtechwms.herokuapp.com/teams?limit=25&offset=0"
+
 
   constructor(private http: HttpClient) { }
 
