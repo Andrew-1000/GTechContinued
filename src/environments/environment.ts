@@ -4,23 +4,23 @@
 
 export const environment = {
   production: false,
-  // firebaseConfig:{
+  firebaseConfig:{
 
-  //   apiKey: "AIzaSyBTaiIw1dfdG093204BKVHUurLy7Otu3BI",
+    apiKey: "AIzaSyBTaiIw1dfdG093204BKVHUurLy7Otu3BI",
   
-  //   authDomain: "g-tech-inventory.firebaseapp.com",
+    authDomain: "g-tech-inventory.firebaseapp.com",
   
-  //   projectId: "g-tech-inventory",
+    projectId: "g-tech-inventory",
   
-  //   storageBucket: "g-tech-inventory.appspot.com",
+    storageBucket: "g-tech-inventory.appspot.com",
   
-  //   messagingSenderId: "369201313814",
+    messagingSenderId: "369201313814",
   
-  //   appId: "1:369201313814:web:053f282e4bdc51756fdd37",
+    appId: "1:369201313814:web:053f282e4bdc51756fdd37",
   
-  //   measurementId: "G-79DPDERWZD"
+    measurementId: "G-79DPDERWZD"
   
-  // }
+  }
 };
 
 /*
