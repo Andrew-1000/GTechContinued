@@ -9,7 +9,8 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "heroku-postbuild": "ng build --prod"
+        "heroku-postbuild": "ng build --prod",
+        "postinstall": "ng build --aot --prod"
 
     },
     "engines": {
@@ -20,6 +21,8 @@
     "private": true,
     "dependencies": {
         "@angular/animations": "~13.0.2",
+        "@angular/cli": "~13.0.3",
+        "@angular/compiler-cli": "~13.0.2",
         "@angular/cdk": "^13.0.3",
         "@angular/common": "~13.0.2",
         "@angular/compiler": "~13.0.2",
@@ -52,8 +55,7 @@
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "^13.0.3",
-        "@angular/cli": "~13.0.3",
-        "@angular/compiler-cli": "~13.0.2",
+
         "@angular/language-service": "~10.0.2",
         "@types/datatables.net": "^1.10.19",
         "@types/firebase": "^3.2.1",
