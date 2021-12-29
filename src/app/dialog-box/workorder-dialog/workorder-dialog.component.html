@@ -3,36 +3,36 @@
 <h3 mat-dialog-title><strong>{{action}}</strong> Workorder </h3>
 <form [formGroup]="workOrderForm">
 
-  <div mat-dialog-content>
+    <div mat-dialog-content>
 
-    <mat-form-field class="full-width" *ngIf="action != 'Delete'; else elseTemplate">
-      <input fo placeholder=" Customer Id" matInput [(ngModel)]="workorder_data.customerId">
-    </mat-form-field>
-    <mat-form-field class="full-width" *ngIf="action != 'Delete'">
-      <input placeholder=" Workorder Number" matInput [(ngModel)]="workorder_data.workorderNumber">
-    </mat-form-field>
-    <mat-form-field class="full-width" *ngIf="action != 'Delete'">
-      <input placeholder=" Date Created" matInput [(ngModel)]="workorder_data.dateCreated">
-    </mat-form-field>
-    <mat-form-field class="full-width" *ngIf="action != 'Delete'">
-      <input placeholder=" Employee ID" matInput [(ngModel)]="workorder_data.employeeId">
-    </mat-form-field>
-    <mat-form-field class="full-width" *ngIf="action != 'Delete'">
-      <input placeholder=" Workorder Date" matInput [(ngModel)]="workorder_data.workOrderDate">
-    </mat-form-field>
-    <mat-form-field class="full-width" *ngIf="action != 'Delete'">
-      <input placeholder=" Signal at Tap" matInput [(ngModel)]="workorder_data.signalTap">
-    </mat-form-field>
-    <mat-form-field class="full-width" *ngIf="action != 'Delete'">
-      <input placeholder=" Signal After Data" matInput [(ngModel)]="workorder_data.signalAd">
-    </mat-form-field>
-    <ng-template #elseTemplate>
-      Sure to delete workorder <b>{{workorder_data.workorderNumber}}?</b>
-    </ng-template>
-  </div>
-  <div mat-dialog-actions align="end" class="row">
-    <button mat-button class="btn btn-success" (click)="doAction()">{{action}}</button>
-    <button mat-button mat-dialog-close>Cancel</button>
-  </div>
+        <mat-form-field class="full-width" *ngIf="action != 'Delete'; else elseTemplate">
+            <input fo placeholder=" Customer Id" matInput [(ngModel)]="workorder_data.customerId">
+        </mat-form-field>
+        <mat-form-field class="full-width" *ngIf="action != 'Delete'">
+            <input placeholder=" Workorder Number" matInput [(ngModel)]="workorder_data.workorderNumber">
+        </mat-form-field>
+        <mat-form-field class="full-width" *ngIf="action != 'Delete'">
+            <input placeholder=" Date Created" matInput [(ngModel)]="workorder_data.dateCreated">
+        </mat-form-field>
+        <mat-form-field class="full-width" *ngIf="action != 'Delete'">
+            <input placeholder=" Employee ID" matInput [(ngModel)]="workorder_data.employeeId">
+        </mat-form-field>
+        <mat-form-field class="full-width" *ngIf="action != 'Delete'">
+            <input placeholder=" Workorder Date" matInput [(ngModel)]="workorder_data.workOrderDate">
+        </mat-form-field>
+        <mat-form-field class="full-width" *ngIf="action != 'Delete'">
+            <input placeholder=" Signal at Tap" matInput [(ngModel)]="workorder_data.signalTap">
+        </mat-form-field>
+        <mat-form-field class="full-width" *ngIf="action != 'Delete'">
+            <input placeholder=" Signal After Data" matInput [(ngModel)]="workorder_data.signalAd">
+        </mat-form-field>
+        <ng-template #elseTemplate>
+            Sure to delete workorder <b>{{workorder_data.workorderNumber}}?</b>
+        </ng-template>
+    </div>
+    <div mat-dialog-actions align="end" class="row">
+        <button mat-button class="btn btn-success" (click)="doAction()">CREATE</button>
+        <button mat-button mat-dialog-close>Cancel</button>
+    </div>
 
 </form>
