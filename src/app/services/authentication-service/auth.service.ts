@@ -154,7 +154,8 @@ get isLoggedIn(): boolean {
   }
 
     //Creating Account and Logging in Using HerokuApp API
-    private _registrationUrl = 'http://gtechwms.herokuapp.com/accounts/';
+    // private _registrationUrl = 'http://gtechwms.herokuapp.com/accounts/';
+    private _registrationUrl = '#';
 
     // private _loginUrl = "https://gtechwms.herokuapp.com/accounts/login"
     private _loginUrl = "#"

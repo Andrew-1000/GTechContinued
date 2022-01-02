@@ -8,7 +8,9 @@ import { Warehouse } from '../../model/warehouse';
 })
 export class WarehouseService {
 
-  private _warehouseUrl = "https://gtechwms.herokuapp.com/warehouses";
+  private _warehouseUrl = "#";
+  // private _warehouseUrl = "https://gtechwms.herokuapp.com/warehouses";
+
 
 
   constructor(private http: HttpClient) { }
