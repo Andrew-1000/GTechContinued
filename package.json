@@ -1,6 +1,6 @@
 {
     "name": "g-tech-continued",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
@@ -9,8 +9,8 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "heroku-postbuild": "ng build --prod",
-        "postinstall": "ng build --aot --prod"
+        "heroku-postbuild": "ng build ",
+        "postinstall": "ng build --aot "
     },
     "engines": {
         "node": "14.18.2",
