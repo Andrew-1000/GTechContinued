@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "node --exec src/server.js",
+        "start": "node src/server.js",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
