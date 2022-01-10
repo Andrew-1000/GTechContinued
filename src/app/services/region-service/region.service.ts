@@ -9,8 +9,11 @@ import { Region } from './../../model/region';
 })
 export class RegionService {
 
-  private _getRegionUrl = `https://gtechwms.herokuapp.com/region?limit=25&offset=0`
-  private _addRegionUrl = `https://gtechwms.herokuapp.com/region`
+  private _getRegionUrl = `#`
+  // private _getRegionUrl = `https://gtechwms.herokuapp.com/region?limit=25&offset=0`
+  private _addRegionUrl = `#`
+  // private _addRegionUrl = `https://gtechwms.herokuapp.com/region`
+
 
   constructor(private _http:HttpClient) { }
 

@@ -1,6 +1,6 @@
 {
     "name": "g-tech-continued",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
@@ -9,19 +9,22 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "heroku-postbuild": "ng build --prod"
+        "heroku-postbuild": "ng build ",
+        "postinstall": "ng build --aot "
     },
     "engines": {
         "node": "14.18.2",
         "npm": "8.3.0"
     },
-
+    "start": "node --exec src/server.js",
     "private": true,
     "dependencies": {
         "@angular/animations": "~13.0.2",
         "@angular/cdk": "^13.0.3",
+        "@angular/cli": "~13.0.3",
         "@angular/common": "~13.0.2",
         "@angular/compiler": "~13.0.2",
+        "@angular/compiler-cli": "~13.0.2",
         "@angular/core": "~13.0.2",
         "@angular/fire": "^7.2.0",
         "@angular/forms": "~13.0.2",
@@ -38,6 +41,7 @@
         "bootstrap": "^5.1.3",
         "datatables.net": "^1.10.21",
         "datatables.net-dt": "^1.10.21",
+        "express": "^4.17.2",
         "firebase": "^9.6.1",
         "font-awesome": "^4.7.0",
         "hammerjs": "^2.0.8",

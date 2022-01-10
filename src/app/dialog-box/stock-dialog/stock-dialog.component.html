@@ -3,39 +3,39 @@
 <h3 mat-dialog-title><strong>{{action}}</strong> <strong> Employee</strong> </h3>
 <form [formGroup]="stockForm">
 
-  <div mat-dialog-content >
+    <div mat-dialog-content>
 
-    <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'; else elseTemplate">
-      <mat-label>Warehouse Name</mat-label>
-      <input formControlName="warehouseName" placeholder="Warehouse Name" matInput [(ngModel)]="stock_data.warehouseName">
-      <mat-error>This field is required</mat-error>
-    </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'; else elseTemplate">
+            <mat-label>Warehouse Name</mat-label>
+            <input formControlName="warehouseName" placeholder="Warehouse Name" matInput [(ngModel)]="stock_data.warehouseName">
+            <mat-error>This field is required</mat-error>
+        </mat-form-field>
 
-    <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
-      <mat-label>Quantity</mat-label>
-      <input formControlName="quantity" placeholder=" Quantity" matInput [(ngModel)]="stock_data.quantity">
-      <mat-error>This field is required</mat-error>
-    </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
+            <mat-label>Quantity</mat-label>
+            <input formControlName="quantity" placeholder=" Quantity" matInput [(ngModel)]="stock_data.quantity">
+            <mat-error>This field is required</mat-error>
+        </mat-form-field>
 
-    <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
-      <mat-label>Item Code</mat-label>
-      <input formControlName="itemCode" placeholder=" Item Code" matInput [(ngModel)]="stock_data.itemCode">
-      <mat-error>This field is required</mat-error>
-    </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
+            <mat-label>Item Code</mat-label>
+            <input formControlName="itemCode" placeholder=" Item Code" matInput [(ngModel)]="stock_data.itemCode">
+            <mat-error>This field is required</mat-error>
+        </mat-form-field>
 
-    <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
-      <mat-label>Warehouse ID</mat-label>
-      <input formControlName="warehouseId" placeholder="Warehouse ID" matInput [(ngModel)]="stock_data.warehouseId">
-      <mat-error>This field is required</mat-error>
-    </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline" *ngIf="action != 'Delete'">
+            <mat-label>Warehouse ID</mat-label>
+            <input formControlName="warehouseId" placeholder="Warehouse ID" matInput [(ngModel)]="stock_data.warehouseId">
+            <mat-error>This field is required</mat-error>
+        </mat-form-field>
 
-    <ng-template #elseTemplate>
-      Sure to delete <b>{{stock_data.employeeFirstName}}?</b>
-    </ng-template>
-  </div>
-  <div mat-dialog-actions align="end" class="row">
-    <button mat-button class="btn btn-success " (click)="doAction()">{{action}}</button>
-    <button mat-button mat-dialog-close>Cancel</button>
-  </div>
+        <ng-template #elseTemplate>
+            Sure to delete <b>{{stock_data.employeeFirstName}}?</b>
+        </ng-template>
+    </div>
+    <div mat-dialog-actions align="end" class="row">
+        <button mat-button class="btn btn-success " (click)="doAction()">CREATE</button>
+        <button mat-button mat-dialog-close>Cancel</button>
+    </div>
 
 </form>
