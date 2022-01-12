@@ -11,6 +11,7 @@
         "e2e": "ng e2e",
         "heroku-postbuild": "ng build ",
         "postinstall": "ng build --aot "
+
     },
     "engines": {
         "node": "14.18.2",
