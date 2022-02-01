@@ -10,7 +10,7 @@
             "**/node_modules/**"
         ],
         "rewrites": [{
-            "source": "**",
+            "source": "src/index.html",
             "destination": "src/index.html"
         }]
     }
