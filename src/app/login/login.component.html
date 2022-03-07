@@ -24,7 +24,7 @@
 
                     <div class="form-group input-group">
                         <!-- Change input type to be dynamic -->
-                        <input [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" class="form-control" formControlName="password" #password [ngClass]="{
+                        <input [type]="fieldTextType ? 'text' : 'password'" placeholder="Password " class="form-control" formControlName="password" #password [ngClass]="{
                 'is-invalid':form.get('password')?.touched && form.get('password')?.invalid}" />
                         <div class="input-group-append">
                             <span class="input-group-text">
